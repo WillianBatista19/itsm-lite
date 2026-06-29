@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: itsm-lite-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    startCommand: apache2-foreground
