@@ -27,6 +27,8 @@ RUN mkdir -p bootstrap/cache storage/framework/cache storage/framework/sessions 
 RUN composer install --no-dev --optimize-autoloader --no-interaction \
     && chown -R www-data:www-data storage bootstrap/cache
 
+RUN chmod +x start.sh
+
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["./start.sh"]
