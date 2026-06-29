@@ -3,8 +3,10 @@ FROM php:8.3-apache
 RUN apt-get update && apt-get install -y \
         libzip-dev \
         libxml2-dev \
+        libonig-dev \
+        libpq-dev \
         unzip \
-    && docker-php-ext-install pdo pdo_mysql mbstring xml bcmath zip opcache \
+    && docker-php-ext-install pdo pdo_pgsql mbstring xml bcmath zip opcache \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 
